@@ -89,15 +89,10 @@ app.use(function(err,res,next){
 /////////////////////////error handling illegal routes/////////////////////////////
 
 app.use(function(req, res) {
-    if(res.status == 404){
-    var myResponse = responseGenerator.generate(false,"You hit an incorrect path. Check again",404,null);
-    res.send(myResponse);
-    }else {
-      var myResponse = responseGenerator.generate(true,"invalid request",500,null);
-      res.send(myResponse);
-    }
+   
+  res.status(404).send("You hit an incorrect path. Check again")
     
-  });	
+});	
 
 
 server.listen(3000, function () {
