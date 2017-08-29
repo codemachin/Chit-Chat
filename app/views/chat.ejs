@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Socket.IO Chat Example</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <ul class="pages">
+    <li class="chat page">
+      <div class="chatArea">
+        <div class="col-xs-12">
+          <span id="back" class="col-xs-12 btn btn-danger">Back</span>
+        </div>
+        <ul class="messages"></ul>
+      </div>
+      <input class="inputMessage" placeholder="Type here..."/>
+    </li>
+    <li class="login page">
+        <div class="col-xs-12" style="margin-top: 10px">
+          <a href="./api/v1/users/logout"><span class="col-xs-12 btn btn-success">logout</span></a>
+        </div>
+      <div class="form">
+        <p style="color:white;font-size:30px ">Hi&nbsp;<span id="user"><%= user.firstName %></span></p>
+        <i><p id="logger" style="color:#81D4FA"></p></i>
+        <i><p id="participant" style="color:#81D4FA"></p></i>
+        <p class="title btn">Friends online&nbsp;<i class="fa fa-circle" aria-hidden="true" style="font-size:15px;color:green;"></i></p><hr style="width:300px">
+        <div class="container-fluid" style="padding-right: 55px;background: black;padding-bottom: 40px">
+        <ul id="list" style="color: white;"></ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="js/socket.io.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

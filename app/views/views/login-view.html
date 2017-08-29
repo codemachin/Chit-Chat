@@ -1,0 +1,59 @@
+<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#/" style="padding-top: 15px"><b>Chit Chat</b></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/signup"><span></span>Signup</a></li>
+      </ul>
+    </div>
+  </div>
+  
+
+</nav>
+
+<div class="container">
+
+    <div class="omb_login">
+    	<marquee>A one to one chat application</marquee>
+    	<h3 class="omb_authTitle">Login or <a href="#/signup">Sign up</a></h3>
+
+		<div class="row omb_row-sm-offset-3">
+			<div class="col-xs-12 col-sm-6">	
+			    <form class="omb_loginForm" ng-submit="myLogin.login()">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-user"></i></span>
+						<input type="text" class="form-control" ng-model="myLogin.email" name="email" placeholder="email address" required="">
+					</div>
+					<span class="help-block"></span>
+										
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+						<input  type="password" class="form-control" ng-model="myLogin.password" name="password" placeholder="Password" required="">
+					</div>
+                    <!-- <span class="help-block">Password error</span> --><br>
+
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+				</form>
+			</div>
+    	</div>
+		<div class="col-sm-offset-7">
+			
+			<div class="col-xs-12 col-sm-6">
+			<br>
+				<p>
+					<a href="#/forgotPassword">Forgot password?</a>
+				</p>
+			</div>
+		</div>	    	
+	</div>
+
+
+</div>

@@ -1,0 +1,33 @@
+<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#/" style="padding-top: 15px"><b>Fast shop</b></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/"><span></span>Login</a></li>
+      </ul>
+    </div>
+  </div>
+		  
+</nav>
+
+<div class="container">
+	<div class="container-fluid">
+        <form ng-submit="myReset.updatePass()">
+	        <div class="col-sm-12 form-group"> 
+				<label for="full_name_id" class="control-label">Enter New Password</label>
+				<input type="text" class="form-control" id="full_name_id" name="Name"  ng-model="myReset.pass" placeholder="New Password" required="">
+			</div>
+			<div style="margin-left: 20px;">
+				<button type="submit" class="btn btn-primary">Update password</button>
+			</div>
+		</form>
+	</div>
+</div>
