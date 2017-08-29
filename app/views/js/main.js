@@ -356,6 +356,7 @@ $(function() {
   socket.on('reconnect', function () {
     log('you have been reconnected');
     $("#logger").text('you have been reconnected')
+    $loginPage.fadeIn();
     if (username) {
       socket.emit('add user', username);
     }
