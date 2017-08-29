@@ -14,15 +14,6 @@ var path = require('path');
 
 module.exports.controllerFunction = function(app) {
 
-    app.get('/chat',auth.chatLogin, function(req, res){
-
-      /*res.sendFile(path.resolve('app/views/chat.html'));*/
-      res.render('chat',
-                {
-                  user:req.session.user,
-                });
-
-    });
 
     userRouter.get('/logout',function(req,res){
       
