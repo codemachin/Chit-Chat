@@ -88,16 +88,17 @@ app.use(function(err,res,next){
 
 /////////////////////////error handling illegal routes/////////////////////////////
 
-/*app.use(function(err, req, res, next) {
+app.use(function(req, res) {
     if(res.status == 404){
     var myResponse = responseGenerator.generate(false,"You hit an incorrect path. Check again",404,null);
     res.send(myResponse);
     }else {
-      var myResponse = responseGenerator.generate(true,err,500,null);
+      var myResponse = responseGenerator.generate(true,"invalid request",500,null);
       res.send(myResponse);
     }
     
-  });	*/
+  });	
+
 
 server.listen(3000, function () {
   console.log('Example app listening on port 3000!');
