@@ -158,15 +158,19 @@ module.exports.socketIo = function(server) {
                 console.log(myResponse);
             }
             else{
-                for(var i=0;i<allUsers.length;i++){
-                  
-                    users[allUsers[i].firstName] = false;
-                  
+                if(allUsers == "" || allUsers == undefined || allUsers == null){
 
-                }
-            
-                /*console.log(users)*/
-                functionToSetOnline(users);
+                  console.log("no users found")
+                }else{
+                  for(var i=0;i<allUsers.length;i++){
+                    
+                      users[allUsers[i].firstName] = false;
+                    
+                  }
+                  /*console.log(users)*/
+                  functionToSetOnline(users);
+
+              }
 
             }
 
