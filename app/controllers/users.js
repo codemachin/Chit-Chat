@@ -79,11 +79,12 @@ module.exports.controllerFunction = function(app) {
             var passwordDb = crypto.encrypt(req.body.password,key);
 
             var newUser = new userModel({
-                
+
+                userName            : req.body.userName,
                 firstName           : req.body.firstName,
                 lastName            : req.body.lastName,
                 email               : req.body.email,
-                password            : passwordDb,
+                password            : passwordDb
 
 
             });// end new user 
@@ -91,7 +92,7 @@ module.exports.controllerFunction = function(app) {
             newUser.save(function(err){
                 if(err){
 
-                    var myResponse = responseGenerator.generate(true,"email already exists in database",500,null);
+                    var myResponse = responseGenerator.generate(true,"username already taken",500,null);
                     res.send(myResponse);
                    
 
@@ -135,14 +136,14 @@ module.exports.controllerFunction = function(app) {
 
         var passwordDb = crypto.encrypt(req.body.password,key);
 
-        userModel.findOne({$and:[{'email':req.body.email},{'password':passwordDb}]},function(err,foundUser){
+        userModel.findOne({$and:[{'userName':req.body.username},{'password':passwordDb}]},function(err,foundUser){
             if(err){
                 var myResponse = responseGenerator.generate(true,"some error"+err,500,null);
                 res.send(myResponse);
             }
             else if(foundUser==null || foundUser==undefined || foundUser._id==undefined){
 
-                var myResponse = responseGenerator.generate(true,"user not found. Check your email and password",404,null);
+                var myResponse = responseGenerator.generate(true,"user not found. Check your username and password",404,null);
                 res.send(myResponse);
 
             }

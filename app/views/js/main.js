@@ -316,7 +316,9 @@ $(function() {
   // Whenever the server emits 'user left', log it in the chat body
   socket.on('user left', function (data) {
     /*log(data.username + ' left');*/
-    $("#logger").text(data.username + ' left')
+    if(data.username!=currentUser){
+      $("#logger").text(data.username + ' left')
+    }
     addParticipantsMessage(data);
     removeChatTyping(data);
   });

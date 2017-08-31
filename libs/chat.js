@@ -120,7 +120,7 @@ module.exports.socketIo = function(server) {
       // echo globally (all clients) that a person has connected
       socket.broadcast.emit('user joined', {
         username: username,
-        numUsers: numUsers
+        numUsers: sockets.length
       });
 
     });
@@ -173,7 +173,7 @@ module.exports.socketIo = function(server) {
                 }else{
                   for(var i=0;i<allUsers.length;i++){
                     
-                      users[allUsers[i].firstName] = false;
+                      users[allUsers[i].userName] = false;
                     
                   }
                   /*console.log(users)*/

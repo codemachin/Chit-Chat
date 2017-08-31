@@ -6,6 +6,7 @@ myApp.controller('signupController',['$http','$routeParams','shopService',functi
   this.password="";
   this.firstName="";
   this.lastName="";
+  this.userName="";
   
   this.baseUrl = './users/signup';
   
@@ -18,6 +19,7 @@ myApp.controller('signupController',['$http','$routeParams','shopService',functi
       			lastName: main.lastName,
             email: main.email,
             password: main.password,
+            userName: main.userName
 
         }
    

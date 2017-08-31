@@ -2,7 +2,7 @@ myApp.controller('loginController',['$http','$routeParams','shopService',functio
 
   //create a context
   var main = this;
-  this.email="";
+  this.username="";
   this.password="";
   
   this.baseUrl = './users/login';
@@ -11,7 +11,7 @@ myApp.controller('loginController',['$http','$routeParams','shopService',functio
   this.login = function(){
 
   	var myData = {
-            email: main.email,
+            username: main.username,
             password: main.password
 
         }

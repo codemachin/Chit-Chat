@@ -28,6 +28,11 @@
 		<div class="row omb_row-sm-offset-3">
 			<div class="col-xs-12 col-sm-6">	
 			    <form class="omb_loginForm" ng-submit="mySignup.signup()">
+			        <div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-user"></i></span>
+						<input type="text" class="form-control" ng-model="mySignup.userName" name="user name" placeholder="username" required="">
+					</div>
+					<span class="help-block"></span>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-user"></i></span>
 						<input type="text" class="form-control" ng-model="mySignup.firstName" name="first name" placeholder="firstname" required="">
@@ -42,7 +47,7 @@
 
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-						<input type="text" class="form-control" ng-model="mySignup.email" name="username" placeholder="email address" required="">
+						<input type="email" class="form-control" ng-model="mySignup.email" name="username" placeholder="email address" required="">
 					</div>
 					<span class="help-block"></span>
 										
