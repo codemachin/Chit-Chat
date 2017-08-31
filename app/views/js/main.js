@@ -36,22 +36,6 @@ $(function() {
     $('#participant').text(message)
   }
 
-  // Sets the client's username
-  function setUsername () {
-    username = cleanInput($usernameInput.val().trim());
-
-    // If the username is valid
-    if (username) {
-      $loginPage.fadeOut();
-      $chatPage.show();
-      $loginPage.off('click');
-      $currentInput = $inputMessage.focus();
-
-      // Tell the server your username
-      socket.emit('add user', username);
-    }
-  }
-
   // Sends a chat message
   function sendMessage () {
     var message = $inputMessage.val();
@@ -205,7 +189,7 @@ $(function() {
         socket.emit('stop typing');
         typing = false;
       } else {
-        setUsername();
+        //setUsername();
       }
     }
   });
@@ -252,6 +236,7 @@ $(function() {
     
       currentUser = $("#user").text();
       socket.emit('add user', currentUser );
+      socket.emit('currentUser', currentUser );
 
    })
 
@@ -357,9 +342,7 @@ $(function() {
     log('you have been reconnected');
     $("#logger").text('you have been reconnected')
     $loginPage.fadeIn();
-    if (username) {
-      socket.emit('add user', username);
-    }
+    socket.emit('currentUser', currentUser );
   });
 
   socket.on('reconnect_error', function () {

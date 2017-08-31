@@ -72,6 +72,32 @@ module.exports.socketIo = function(server) {
     sendChat = function(result,user){
       io.to(sockets[user]).emit('sendChat',result);
     }
+
+    socket.on('currentUser',function(username){
+        eventEmitter.emit('userList');
+
+        socket.username = username;
+        sockets[socket.username] = socket.id;
+
+
+        //compare all users with users that are in sockets
+        functionToSetOnline = function(users) {
+          for (x in sockets) {
+            for (y in users) {
+              if (y == x) {
+                users[y] = true;
+              }
+            }
+          }
+        //emits online users to everyone
+        io.emit('users',users)
+        }
+
+        socket.broadcast.emit('user joined', {
+          username: socket.username,
+          numUsers: numUsers
+        });
+    })
       
         
         
@@ -82,24 +108,7 @@ module.exports.socketIo = function(server) {
     socket.on('add user', function (username) {
       if (addedUser) return;
 
-      eventEmitter.emit('userList');
-
-      socket.username = username;
-      sockets[socket.username] = socket.id;
-
-
-      //compare all users with users that are in sockets
-      functionToSetOnline = function(users) {
-        for (x in sockets) {
-          for (y in users) {
-            if (y == x) {
-              users[y] = true;
-            }
-          }
-        }
-      //emits online users to everyone
-      io.emit('users',users)
-      }
+      
 
       // we store the username in the socket session for this client
       /*socket.username = username;*/
@@ -110,7 +119,7 @@ module.exports.socketIo = function(server) {
       });
       // echo globally (all clients) that a person has connected
       socket.broadcast.emit('user joined', {
-        username: socket.username,
+        username: username,
         numUsers: numUsers
       });
 
