@@ -69,6 +69,8 @@ Getting started
 
 ## Deployment on linux server
 
+Installing and pulling files
+
 ```
 	1) Create new directory by : mkdir dirname
 	2) Add git origin by : git remote add origin https://github.com/codemachin/Chit-Chat.git
@@ -76,6 +78,29 @@ Getting started
 	4) cd into that folder
 	5) Run : npm install, to install all dependencies
 	6) Run : node app.js, to start the server
+```
+
+Nginx configuration for proxy pass and websocket
+
+```
+
+	server{
+
+	    listen 80;
+
+	    location / {
+
+	            proxy_pass http://localhost:3000;
+	            proxy_http_version 1.1;
+	            proxy_set_header Upgrade $http_upgrade;
+	            proxy_set_header Connection "upgrade";
+	            proxy_set_header Host     $host;
+	            proxy_set_header X-Real-IP $remote_addr;
+
+	    }
+
+	}
+
 ```
 
 ## Built With
