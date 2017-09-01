@@ -4,7 +4,7 @@ Robust MEAN one-to-one chat application using socket.io
 
 ## Domain pointed to cloud server
 
-		1) [chitchat.ga](http://chitchat.ga "chat app")
+[chitchat.ga](http://chitchat.ga "chat app")
 
 ## Features
 
