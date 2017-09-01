@@ -70,7 +70,7 @@ module.exports.controllerFunction = function(app) {
           var mailOptions={
             to : arg.email,
             subject : "Enter OTP",
-            text : "Follow this link : http://localhost:3000/#/verify/otp and enter OPT : "+OTP
+            text : "Follow this link : http://52.1.107.157/#/verifyOTP and enter OPT : "+OTP
           }
           console.log(mailOptions);
           smtpTransport.sendMail(mailOptions, function(error, response){
