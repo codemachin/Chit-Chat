@@ -34,12 +34,12 @@ var smtpTransport = nodemailer.createTransport({
 /*------------------Routing Started ------------------------*/
 module.exports.controllerFunction = function(app) {
   var OTP="";
-  var email="";
+  var userName="";
   var user = {};
 
     app.get('/mail/requestPass/:id',function(req,res){
       OTP = shortid.generate();
-      email = req.params.id;
+      userName = req.params.id;
       
       var functionToFindUserByEmail = function(callback){
             
@@ -48,7 +48,7 @@ module.exports.controllerFunction = function(app) {
                 var myResponse = responseGenerator.generate(true,"some error"+err,500,null);
                 callback(myResponse);
             }
-            else if(foundUser==null || foundUser==undefined || foundUser.email==undefined){
+            else if(foundUser==null || foundUser==undefined || foundUser.userName==undefined){
 
                 var myResponse = responseGenerator.generate(true,"user not found",404,null);
                 callback(myResponse)
@@ -126,7 +126,7 @@ module.exports.controllerFunction = function(app) {
 
             user.password=passwordDb;
 
-            userModel.findOneAndUpdate({'email':email},user,function(err,result){
+            userModel.findOneAndUpdate({'userName': userName},user,function(err,result){
                 if(err){
                   var myResponse = responseGenerator.generate(true,"some error"+err,404,null);
                   res.send(myResponse);
