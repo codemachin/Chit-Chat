@@ -2,9 +2,13 @@
 
 Robust MEAN one-to-one chat application using socket.io
 
-## Domain pointed to cloud server
+## Domain pointed to cloud server using route 53
 
 [chitchat.ga](http://chitchat.ga "chat app")
+
+## AWS public ip
+
+[52.1.107.157](http://52.1.107.157 "chat app")
 
 ## Features
 
