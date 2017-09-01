@@ -41,7 +41,7 @@ Setting up the local server
 ```
 	1) Unzip the file
 	2) Open terminal and change its location the where you unzipped the file
-	3) run command npm install
+	3) Run command npm install
 	4) After all dependencies are installed. Run command : node app.js, in your terminal
 	5) let the server start
 ```
@@ -60,7 +60,7 @@ Getting started
 	1) Use a unique username to start with
 	2) After logging in, users who are online are representated with green dot
 	3) Users who are offline are representated with red dot 
-	4) click on a particular user to start the chat
+	4) Click on a particular user to start the chat
 	5) To move back press the red back button on top of the page
 	6) Use top green button to logout
 ```
@@ -80,7 +80,7 @@ Installing and pulling files
 	6) Run : node app.js, to start the server
 ```
 
-Nginx configuration for proxy pass and websocket
+Nginx configuration for proxy pass to port 80 and allowing websocket
 
 ```
 
