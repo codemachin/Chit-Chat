@@ -24,11 +24,11 @@
         <form >
 	        <div class="col-sm-12 form-group"> <br>
 	        	After clicking on send otp, please wait for your request to get processed<br>
-    				<label for="full_name_id" class="control-label">Email Address</label>
-    				<input type="text" class="form-control" id="full_name_id" name="Name"  ng-model="myReset.email" placeholder="Email" required="">
+    				<label for="full_name_id" class="control-label">User Name</label>
+    				<input type="text" class="form-control" id="full_name_id" name="Name"  ng-model="myReset.userName" placeholder="User Name" required="">
     			</div>
     			<div style="margin-left: 20px;">
-    				<button ng-if="myReset.email" ng-click="myReset.forgotMail(myReset.email)" type="submit" class="btn btn-primary">Send otp</button>
+    				<button ng-if="myReset.userName" ng-click="myReset.forgotMail(myReset.userName)" type="submit" class="btn btn-primary">Send otp</button>
     			</div>
     		</form>
 	</div>

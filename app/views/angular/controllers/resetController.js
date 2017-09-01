@@ -2,7 +2,7 @@ myApp.controller('resetController',['$http','$routeParams','shopService',functio
 
   //create a context
   var main = this;
-  this.email="";
+  this.userName="";
   this.otp="";
   this.pass="";
   

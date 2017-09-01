@@ -43,7 +43,7 @@ module.exports.controllerFunction = function(app) {
       
       var functionToFindUserByEmail = function(callback){
             
-          userModel.findOne({'email':req.params.id},function(err,foundUser){
+          userModel.findOne({'userName':req.params.id},function(err,foundUser){
             if(err){
                 var myResponse = responseGenerator.generate(true,"some error"+err,500,null);
                 callback(myResponse);
@@ -81,7 +81,7 @@ module.exports.controllerFunction = function(app) {
              }else{
                     console.log("Message sent: " + response.message);
                     req.session.isUserVerifying=true;
-                    var myResponse = responseGenerator.generate(false,"Otp sent in your mail.Check and verify",200,null);
+                    var myResponse = responseGenerator.generate(false,"Otp sent to "+arg.email+". Check and verify",200,null);
                     callback(null,myResponse);
                  }
           });
